@@ -1,105 +1,39 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Container version="2">
   <Name>LibationWeb</Name>
   <Repository>jtechguru1993/libation-web:latest</Repository>
-  <Registry>https://hub.docker.com/r/jtechguru1993/libation-web</Registry>
+  <Registry>https://docker.com</Registry>
   <Network>bridge</Network>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/jtechguru1/Libation/issues</Support>
-  <Project>https://github.com/jtechguru1/Libation/tree/web-ui-via-docker</Project>
+  <Support>https://unraid.net</Support>
+  <Project>https://github.com</Project>
   <Overview>
     A web UI wrapper for Libation — the Audible audiobook manager. Connects to your Audible account,
     scans your library, and downloads audiobooks via LibationCli. Single Docker container with a
     FastAPI backend and React frontend. Supports multiple users, 2FA, session management, per-user
     download caps, per-account auto-download, and PUID/PGID for proper Unraid permissions.
-
-    Attribution: Built on top of LibationCli by rmcrackan (https://github.com/rmcrackan/Libation).
-    This is an independent community project, not affiliated with the original Libation project.
   </Overview>
   <Category>Downloaders: MediaApp:Music</Category>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/jtechguru1/Libation/web-ui-via-docker/unraid-template.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/jtechguru1/Libation/web-ui-via-docker/unraid-icon.png</Icon>
+  <TemplateURL>https://githubusercontent.com</TemplateURL>
+  <Icon>https://githubusercontent.com</Icon>
   <ExtraParams></ExtraParams>
   <PostArgs></PostArgs>
   <CPUset></CPUset>
   <DateInstalled></DateInstalled>
   <DonateText></DonateText>
   <DonateLink></DonateLink>
-  <Description>
-    Web UI wrapper for Libation (Audible audiobook manager). Scan your Audible library and download
-    audiobooks. Supports multiple users, 2FA, per-user download caps, per-account auto-download, and
-    PUID/PGID for Unraid permissions.
-  </Description>
-
-  <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort>8000</HostPort>
-        <ContainerPort>8000</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
-  </Networking>
-
-  <Data>
-    <Volume>
-      <HostDir>/mnt/user/appdata/libation/data</HostDir>
-      <ContainerDir>/data</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt/user/appdata/libation/config</HostDir>
-      <ContainerDir>/config</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt/user/audiobooks</HostDir>
-      <ContainerDir>/audiobooks</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-  </Data>
-
-  <Environment>
-    <Variable>
-      <Value>admin</Value>
-      <Name>ADMIN_USERNAME</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>admin</Value>
-      <Name>ADMIN_PASSWORD</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>change-me-use-a-long-random-string</Value>
-      <Name>SECRET_KEY</Name>
-      <Description>Used to sign authentication tokens. Use a random string of at least 32 characters — longer is better. Avoid $ and " characters.</Description>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>99</Value>
-      <Name>PUID</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>100</Value>
-      <Name>PGID</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>15</Value>
-      <Name>ACCESS_TOKEN_EXPIRE_MINUTES</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>60</Value>
-      <Name>REFRESH_TOKEN_EXPIRE_DAYS</Name>
-      <Mode/>
-    </Variable>
-  </Environment>
-
-  <Labels/>
+  <Description>Web UI wrapper for Libation (Audible audiobook manager). Scan your Audible library and download audiobooks. Supports multiple users, 2FA, per-user download caps, per-account auto-download, and PUID/PGID for Unraid permissions.</Description>
+  <Config Name="WebUI Port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+  <Config Name="Appdata Data" Target="/data" Default="/mnt/user/appdata/libation/data" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/libation/data</Config>
+  <Config Name="Appdata Config" Target="/config" Default="/mnt/user/appdata/libation/config" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/libation/config</Config>
+  <Config Name="Audiobooks Storage" Target="/audiobooks" Default="/mnt/user/audiobooks" Mode="rw" Description="Container Path: /audiobooks" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/audiobooks</Config>
+  <Config Name="Admin Username" Target="ADMIN_USERNAME" Default="admin" Mode="" Description="Container Variable: ADMIN_USERNAME" Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
+  <Config Name="Admin Password" Target="ADMIN_PASSWORD" Default="admin" Mode="" Description="Container Variable: ADMIN_PASSWORD" Type="Variable" Display="always" Required="false" Mask="true">admin</Config>
+  <Config Name="Secret Key" Target="SECRET_KEY" Default="change-me-use-a-long-random-string" Mode="" Description="Used to sign authentication tokens. Use a random string of at least 32 characters — longer is better. Avoid $ and &quot; characters." Type="Variable" Display="always" Required="true" Mask="true">change-me-use-a-long-random-string</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="Access Token Expire Minutes" Target="ACCESS_TOKEN_EXPIRE_MINUTES" Default="15" Mode="" Description="Container Variable: ACCESS_TOKEN_EXPIRE_MINUTES" Type="Variable" Display="advanced" Required="false" Mask="false">15</Config>
+  <Config Name="Refresh Token Expire Days" Target="REFRESH_TOKEN_EXPIRE_DAYS" Default="60" Mode="" Description="Container Variable: REFRESH_TOKEN_EXPIRE_DAYS" Type="Variable" Display="advanced" Required="false" Mask="false">60</Config>
 </Container>
