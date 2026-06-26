@@ -4,5 +4,5 @@
     <Name>jtechguru1993</Name>
     <Bio>A libation with a webui. It is based on libation CLI, but uses the Libation sidecar, which basically allows the cli to have features it otherwise wouldn't. Giving near featur parity with the native application. It has a beautiful webui transcending that of the original as well.</Bio>
     <Icon>https://github.com</Icon>
-    <Support>https://unraid.net</Support>
+    <Support>https://forums.unraid.net/topic/199566-libation-web-ui-support-forum-container/</Support>
 </Maintainer>
