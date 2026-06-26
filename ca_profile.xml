@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Profile>
-    <Author>jtechguru1</Author>
-    <Name>jtechguru1993</Name>
-    <Bio>A libation with a webui. It is based on libation CLI, but uses the Libation sidecar, which basically allows the cli to have features it otherwise wouldn't. Giving near featur parity with the native application. It has a beautiful webui transcending that of the original as well.</Bio>
-    <Icon>https://githubusercontent.com</Icon>
-    <Support>https://forums.unraid.net/topic/199566-libation-web-ui-support-forum-container/</Support>
-</Profile>
+<ca>
+    <Profile>
+        Just a hobbyist that wants to make home labbing better for everyone. I have a strong sense of justice, and believe in ownership rights, which has led me to self hosting nearly evry major app in my life.
+    </Profile>
+</ca>
