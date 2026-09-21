@@ -2,12 +2,12 @@
 <Container version="2">
   <Name>LibationWeb</Name>
   <Repository>jtechguru1993/libation-web:latest</Repository>
-  <Registry>https://docker.com</Registry>
+  <Registry>https://hub.docker.com/r/jtechguru1993/libation-web</Registry>
   <Network>bridge</Network>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support>https://unraid.net</Support>
-  <Project>https://github.com</Project>
+  <Support>https://github.com/jtechguru1/Libation/issues</Support>
+  <Project>https://github.com/jtechguru1/Libation/tree/web-ui-via-docker</Project>
   <Overview>
     A web UI wrapper for Libation — the Audible audiobook manager. Connects to your Audible account,
     scans your library, and downloads audiobooks via LibationCli. Single Docker container with a
@@ -16,8 +16,8 @@
   </Overview>
   <Category>Downloaders: MediaApp:Music</Category>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
-  <TemplateURL>https://githubusercontent.com</TemplateURL>
-  <Icon>https://githubusercontent.com</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/jtechguru1/unraid-templates/main/libation-with-web_ui/unraid-template.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/jtechguru1/Libation/web-ui-via-docker/unraid-icon-v2.png</Icon>
   <ExtraParams></ExtraParams>
   <PostArgs></PostArgs>
   <CPUset></CPUset>
